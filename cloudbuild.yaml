@@ -6,13 +6,15 @@ steps:
       - |
         git submodule init
         git submodule update
-
-  - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone2'
+  - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
+    dir: "/home/yocto"
     args:
       - '-c'
       - |
-        ./build-image.sh
+        whoami
+        /workspace/build-image.sh
+        ls -alh tmp-newlib/deploy/images/nrf52840dk-nrf52840/
 
 artifacts:
   objects:
