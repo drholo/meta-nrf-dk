@@ -1,13 +1,12 @@
 steps:
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
+    entrypoint: "bash"
     args:
-      - -c
+      - '-c'
       - |
         pwd
         ls -alth
         find . -name cloudbuild.yaml
-        git submodule init
-        git submodule update
         ./build-image.sh
 
 artifacts:
