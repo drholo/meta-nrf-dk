@@ -2,11 +2,14 @@
 	path = submodule/meta-openembedded
 	url = https://git.openembedded.org/meta-openembedded
 	branch = kirkstone
+	depth = 1
 [submodule "submodule/meta-zephyr"]
 	path = submodule/meta-zephyr
 	url = https://git.yoctoproject.org/meta-zephyr
 	branch = kirkstone
+	depth = 1
 [submodule "submodule/poky"]
 	path = submodule/poky
 	url = https://git.yoctoproject.org/poky
 	branch = kirkstone
+	depth = 1
