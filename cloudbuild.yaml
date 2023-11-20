@@ -7,6 +7,16 @@ steps:
         git submodule init
         git submodule update
         ls submodule/meta-openembedded
+  - name: "alpine"
+    entrypoint: "sh"
+    args:
+      - '-c'
+      - |
+        ls /
+        ls /home
+        mkdir build
+        chmod -R 0664 build
+
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
     args:
@@ -15,9 +25,8 @@ steps:
         pwd
         ls -alth
         find . -name cloudbuild.yaml
-        ls ../submodule/poky
-        ../build-image.sh
-    dir: 'build'
+        ls submodule/poky
+        ./build-image.sh
 
 artifacts:
   objects:
