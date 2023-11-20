@@ -1,0 +1,8 @@
+[submodule "submodule/meta-openembedded"]
+	path = submodule/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+	branch = kirkstone
+[submodule "submodule/meta-zephyr"]
+	path = submodule/meta-zephyr
+	url = git://git.yoctoproject.org/meta-zephyr
+	branch = kirkstone
