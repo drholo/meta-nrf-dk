@@ -15,8 +15,9 @@ steps:
         pwd
         ls -alth
         find . -name cloudbuild.yaml
-        ls submodule/poky
-        ./build-image.sh
+        ls ../submodule/poky
+        ../build-image.sh
+    dir: 'build'
 
 artifacts:
   objects:
