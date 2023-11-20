@@ -1,7 +1,16 @@
 steps:
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: 'bash'
-    args: ['./build-image.sh']
+    args: ['pwd']
+    # args: ['./build-image.sh']
+
+  - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
+    entrypoint: 'bash'
+    args: ['ls', '-alth']
+
+  - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
+    entrypoint: 'bash'
+    args: ['find', '.', '-name', 'cloudbuild.yaml']
 
 artifacts:
   objects:
