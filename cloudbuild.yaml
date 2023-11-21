@@ -24,4 +24,4 @@ artifacts:
     paths:
       - 'tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf'
 options:
-  machineType: 'E2_HIGHCPU_32'
+  machineType: 'E2_HIGHCPU_8'
