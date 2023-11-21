@@ -14,7 +14,6 @@ steps:
       - '-c'
       - |
         /workspace/build-image.sh
-        ls -alh tmp-newlib/deploy/images/nrf52840dk-nrf52840/
     env:
       - 'BASEMETAPATH=/workspace'
 
