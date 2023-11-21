@@ -9,10 +9,10 @@ steps:
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
     dir: "/home/yocto"
+    timeout: 7200s
     args:
       - '-c'
       - |
-        whoami
         /workspace/build-image.sh
         ls -alh tmp-newlib/deploy/images/nrf52840dk-nrf52840/
     env:
@@ -23,3 +23,5 @@ artifacts:
     location: 'gs://${_BUCKET_NAME}/'
     paths:
       - 'tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf'
+options:
+  machineType: 'E2_HIGHCPU_32'
