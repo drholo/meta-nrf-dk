@@ -14,6 +14,7 @@ steps:
       - '-c'
       - |
         /workspace/build-image.sh
+        find . -name '*blinky*elf'
     env:
       - 'BASEMETAPATH=/workspace'
 
