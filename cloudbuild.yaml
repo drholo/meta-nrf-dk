@@ -22,7 +22,6 @@ artifacts:
   objects:
     location: 'gs://bright-cabinet-405308_cloudbuild/yocto-cache/artifacts/'
     paths:
-      - '*.elf'
-      - '/home/yocto/build/sstate/*'
+      - './build/tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf'
 options:
   machineType: 'E2_HIGHCPU_8'
