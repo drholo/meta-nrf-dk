@@ -6,6 +6,8 @@ steps:
       - |
         git submodule init
         git submodule update
+        mkdir artifacts
+        chmod -R 666 artifacts
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
     dir: "/home/yocto"
@@ -15,6 +17,7 @@ steps:
       - |
         /workspace/build-image.sh
         find . -name '*blinky*elf'
+        cp /home/yocto/build/tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf /workspace/artifacts
     env:
       - 'BASEMETAPATH=/workspace'
 
@@ -22,6 +25,6 @@ artifacts:
   objects:
     location: 'gs://bright-cabinet-405308_cloudbuild/yocto-cache/artifacts/'
     paths:
-      - './build/tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf'
+      - 'artifacts/*.elf'
 options:
   machineType: 'E2_HIGHCPU_8'
