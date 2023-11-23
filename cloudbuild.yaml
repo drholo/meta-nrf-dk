@@ -16,8 +16,8 @@ steps:
       - '-c'
       - |
         source /workspace/submodule/poky/oe-init-build-env
-        export BASEMETAPATH=/workspace
-        export DEPLOY_DIR=/workspace/deploy
+        export BASEMETAPATH='/workspace'
+        export DEPLOY_DIR='/workspace/deploy'
         cp /workspace/yocto-conf/* conf/.
         bitbake zephyr-blinky
         find / -name '*blinky*elf'
