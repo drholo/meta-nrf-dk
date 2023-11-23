@@ -7,7 +7,7 @@ steps:
         git submodule init
         git submodule update
         mkdir artifacts
-        chmod -R 666 artifacts
+        chmod -R 777 artifacts
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
     dir: "/home/yocto"
