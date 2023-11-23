@@ -15,7 +15,9 @@ steps:
     args:
       - '-c'
       - |
-        /workspace/build-image.sh
+        source /workspace/submodule/poky/oe-init-build-env
+        cp /workspace/yocto-conf/* conf/.
+        bitbake zephyr-blinky
         find / -name '*blinky*elf'
         cp /home/yocto/build/tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf /workspace/artifacts
     env:
