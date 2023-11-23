@@ -16,13 +16,12 @@ steps:
       - '-c'
       - |
         source /workspace/submodule/poky/oe-init-build-env
+        export BASEMETAPATH=/workspace
+        export DEPLOY_DIR=/workspace/deploy
         cp /workspace/yocto-conf/* conf/.
         bitbake zephyr-blinky
         find / -name '*blinky*elf'
         cp /home/yocto/build/tmp-newlib/deploy/images/nrf52840dk-nrf52840/*.elf /workspace/artifacts
-    env:
-      - 'BASEMETAPATH=/workspace'
-      - 'DEPLOY_DIR=/workspace/deploy'
 
 artifacts:
   objects:
@@ -31,6 +30,3 @@ artifacts:
       - 'artifacts/**/*.elf'
 options:
   machineType: 'E2_HIGHCPU_8'
-  env:
-    - 'BASEMETAPATH=/workspace'
-    - 'DEPLOY_DIR=/workspace/deploy'
