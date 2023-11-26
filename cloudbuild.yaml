@@ -19,7 +19,6 @@ steps:
         source /workspace/submodule/poky/oe-init-build-env
         cp /workspace/yocto-conf/* conf/.
         bitbake zephyr-blinky
-        find / -name '*blinky*elf'
     volumes:
       - path: '/yocto-cache/downloads'
         name: 'yocto-cache-downloads'
