@@ -6,10 +6,8 @@ steps:
       - |
         git submodule init
         git submodule update
-        mkdir -p /workspace/deploy
-        chmod -R 777 /workspace/deploy
 
-  - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone2'
+  - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
     dir: "/home/yocto"
     timeout: 7200s
