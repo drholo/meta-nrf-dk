@@ -27,7 +27,6 @@ steps:
         gsutil -m rsync -r /workspace/deploy /workspace/artifacts
         gsutil -m rsync -r /yocto-cache/sstate gs://bright-cabinet-405308_cloudbuild/yocto-cache/sstate
          
-
 artifacts:
   objects:
     location: 'gs://bright-cabinet-405308_cloudbuild/yocto-cache/artifacts/'
@@ -40,4 +39,3 @@ options:
       name: 'yocto-cache-sstate'
     - path: '/workspace/deploy'
       name: 'yocto-artifacts'
-
