@@ -6,6 +6,8 @@ steps:
       - |
         git submodule init
         git submodule update
+        mkdir -p /workspace/deploy
+        chown yocto:yocto /workspace/deploy
 
   - name: 'us-west2-docker.pkg.dev/bright-cabinet-405308/yocto-docker-repo/yocto-builder:kirkstone'
     entrypoint: "bash"
